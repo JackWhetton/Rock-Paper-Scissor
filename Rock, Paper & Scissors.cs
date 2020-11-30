@@ -1,90 +1,94 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace RockWins
 {
-    class Program
+    class program
     {
         static void Main(string[] args)
         {
-            string userinput, Computerinput; // input Values.
+            string inputUser, inputComputer; // input Values.
             int randomInt;
 
             bool Playagain = true;
 
             while (Playagain)
             {
-                int UserScore = 0; // move here to enable to keep score, when played again.
-                int ComputerScore = 0;
+                int userScore = 0; // move here to enable to keep score, when played again.
+                int computerScore = 0;
 
 
-                while (UserScore < 3 && ComputerScore < 3)
+                while (userScore < 3 && computerScore < 3)
                 {
 
 
 
                     Console.WriteLine(" Choose Rock, Paper or Scissors    "); // asking the user tp input there value.
-                    userinput = Console.ReadLine(); // asking the computer to read the user value.
-                    userinput = userinput.ToUpper();// enable upper case letters " i think"
+                    inputUser = Console.ReadLine(); // asking the computer to read the user value.
+                    inputUser = inputUser.ToUpper();// enable upper case letters " i think"
                     Random rnd = new Random(); // Create a Random Value for the computer to choice.
 
                     randomInt = rnd.Next(1, 4); // value choice for the computer is between 1 & 4.
 
-                    switch (randomInt) // creating the values for RandomInt
+                    switch (randomInt) 
                     {
                         case 1:
-                            userinput = "rock";
+                            inputComputer = "rock";
                             Console.WriteLine("computer has chosen Rock");
-                            if (userinput == "rock") // just in case the user and computer chose the same answer.
+                            if (inputUser == "rock") // just in case the user and computer chose the same answer.
                             {
-                                Console.WriteLine("Draw");
+                                Console.WriteLine("Draw   \n\n");
                             }
-                            else if (userinput == "paper") // Other possible outcomes
+                            else if (inputUser == "paper") // Other possible outcomes
                             {
-                                Console.WriteLine("Player Wins");
-                                UserScore++;
+                                Console.WriteLine("Player Wins \n\n");
+                                userScore++;
                             }
-                            else if (userinput == "Scissor")
+                            else if (inputUser == "Scissor")
                             {
-                                Console.WriteLine("Computer wins");
-                                ComputerScore++;
+                                Console.WriteLine("Computer wins \n\n");
+                                computerScore++;
                             }
                             break;
 
                         case 2:
-                            userinput = "paper";
+                            inputComputer = "paper";
                             Console.WriteLine("computer has chosen Paper");
-                            if (userinput == "Paper") // just in case the user and computer chose the same answer.
+                            if (inputUser == "Paper") // just in case the user and computer chose the same answer.
                             {
-                                Console.WriteLine("Draw");
+                                Console.WriteLine("Draw \n\n");
                             }
-                            else if (userinput == "Rock") // Other possible outcomes
+                            else if (inputUser == "Rock") // Other possible outcomes
                             {
-                                Console.WriteLine("Player Wins");
-                                UserScore++;
+                                Console.WriteLine("Computer Wins!! \n\n");
+                                userScore++;
                             }
-                            else if (userinput == "Scissor")
+                            else if (inputUser == "Scissor")
                             {
-                                Console.WriteLine("Computer wins");
-                                ComputerScore++;
+                                Console.WriteLine("Player Wins!! \n\n");
+                                computerScore++;
                             }
                             break;
 
                         case 3:
-                            userinput = "scissors";
+                            inputComputer = "scissors";
                             Console.WriteLine("computer has chosen scissors");
-                            if (userinput == "scissors") // just in case the user and computer chose the same answer.
+                            if (inputUser == "scissors") // just in case the user and computer chose the same answer.
                             {
-                                Console.WriteLine("Draw");
+                                Console.WriteLine("Draw \n\n");
                             }
-                            else if (userinput == "paper") // Other possible outcomes
+                            else if (inputUser == "paper") // Other possible outcomes
                             {
-                                Console.WriteLine("Player Wins");
-                                UserScore++;
+                                Console.WriteLine("Computer Wins!! \n\n");
+                                userScore++;
                             }
-                            else if (userinput == "Rock")
+                            else if (inputUser == "Rock")
                             {
-                                Console.WriteLine("Computer wins");
-                                ComputerScore++;
+                                Console.WriteLine("Player Wins!! \n\n");
+                                computerScore++;
                             }
                             break;
 
@@ -96,13 +100,13 @@ namespace RockWins
 
                 }
 
-                if (UserScore == 3) // display text on winner 
+                if (userScore == 3) // display text on winner 
                 {
-                    Console.WriteLine(" User Wins !!");
+                    Console.WriteLine(" User Wins !! \n\n");
                 }
-                else if (ComputerScore == 3)
+                else if (computerScore == 3)
                 {
-                    Console.WriteLine(" Computer Wins !!");
+                    Console.WriteLine(" Computer Wins !! \n\n");
                 }
                 else
                 {
@@ -112,7 +116,7 @@ namespace RockWins
                 String loop = Console.ReadLine();
                 if (loop == "y")
                 {
-                    Playagain = true;
+                    Playagain = true; // change varaiable name 
                 }
                 else if (loop == "n")
                 {
